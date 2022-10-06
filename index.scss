@@ -15,7 +15,9 @@ $nav-txt-shadow: rgb(251, 88, 0);
 $nav-btn-txt: #4f6eb0;
 body {
   color: #6b0f13;
-} //....GLOBAL CLASSES.....//
+}
+
+//....GLOBAL CLASSES.....//
 
 h2 {
   text-transform: uppercase;
@@ -27,17 +29,21 @@ p {
   letter-spacing: 1px;
   margin: 0 2rem;
 }
+.button--wrapper {
+  border-radius: 100px;
+  border: solid 1px #f7f7f7;
+}
 button {
   color: $nav-txt-color;
   border: none;
   background-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-style: italic;
   font-weight: 900;
   letter-spacing: 1.5px;
-  padding: 1rem;
-  margin: 0 2rem;
+  padding: 0.5rem;
+  margin: 0 1rem;
   border-radius: 50%;
   transition: 0.2s;
 }
@@ -46,15 +52,19 @@ button:hover {
   color: $nav-btn-txt;
   border-radius: 100px;
   transition: 0.2s;
-  padding: 1rem 3rem;
+  padding: 0.5rem 1.5rem;
   margin: 0;
+}
+svg {
+  width: 24px;
+  height: 24px;
 }
 
 //.....GLOBAL FILTER CLASS.....//
 
 .bg__filter {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
@@ -73,13 +83,6 @@ button:hover {
   background-attachment: fixed;
   margin-bottom: 14rem;
   position: relative;
-  // img {
-  //   grid-column: 1;
-  //   grid-row: 1/-1;
-  //   filter: brightness(0.6);
-  //   width: 100%;
-  //   height: auto;
-  // }
   .nav--menu {
     grid-column: 1;
     grid-row: 1;
@@ -100,9 +103,9 @@ button:hover {
     z-index: 2;
     .nav--container__header--box {
       grid-row: 1;
-
+      text-align: center;
       h1 {
-        font-size: 7rem;
+        font-size: 5rem;
         color: $nav-txt-color;
         font-style: italic;
         text-transform: uppercase;
@@ -112,22 +115,22 @@ button:hover {
 }
 .main {
   .main--container {
-    max-width: 1200px;
-    margin: auto;
-    margin-bottom: 14rem;
-
+    // max-width: 1200px;
+    // margin: auto;
+    margin-bottom: 10rem;
     .main--gallery {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: 100%;
       div {
         display: flex;
         flex-direction: column;
-        width: 30rem;
+        width: 100%;
         height: auto;
         align-items: center;
         justify-content: center;
+        margin-bottom: 4rem;
         img {
-          width: 30rem;
+          width: 100%;
           height: auto;
         }
       }
@@ -137,9 +140,8 @@ button:hover {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-
     width: 100%;
-    height: 60vh;
+    height: 110vh;
     margin-bottom: 14rem;
     overflow: hidden;
     position: relative;
@@ -157,7 +159,7 @@ button:hover {
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 60vh;
+      height: 110vh;
       z-index: 2;
 
       h2 {
@@ -168,19 +170,13 @@ button:hover {
     }
   }
   .locations {
-    max-width: 1200px;
-    margin: auto;
-    margin-bottom: 14rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     h2 {
       justify-self: center;
       grid-column: 1/-1;
     }
     .location {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -193,10 +189,62 @@ button:hover {
         margin: 0 0 1rem 2rem;
         text-transform: uppercase;
       }
+      .button--wrapper {
+        border: solid 1px #6b0f13;
+        margin: 1rem 0 2.5rem 2rem;
+        overflow: hidden;
+
+        button {
+          font-size: 0.8rem;
+          padding: 0.4rem 0.4rem;
+          color: #6b0f13;
+        }
+        button:hover {
+          color: #f7f7f7;
+          background-color: #6b0f13;
+          padding: 0.4rem 1.4rem;
+        }
+      }
       ul {
         line-height: 2rem;
         margin-left: 2rem;
         list-style: none;
+        li {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          p {
+            margin: 0 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 700px) {
+  .main {
+    .main--container {
+      // max-width: 1200px;
+      // margin: auto;
+      .main--gallery {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(3, auto);
+        .main--gallery--item2 {
+          grid-column: 1;
+          grid-row: 2;
+        }
+        .main--gallery--item2--img {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+    }
+    .locations {
+      // grid-template-columns: 1fr 1fr 1fr;
+      .location {
+        max-width: 680px;
+        margin: auto;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
     }
   }
