@@ -1,8 +1,20 @@
 const openNav = document.querySelector(".open--nav");
 const closeNav = document.querySelector(".close--nav");
 const navMenu = document.querySelector(".nav--menu");
+const navImgBox = document.querySelector(".nav--img--box");
+const navImg = document.querySelector(".nav--img");
 
 const mediaWidth = window.matchMedia("(min-width: 600px)");
+
+let scrolled;
+
+function parallax() {
+  scrolled = window.scrollY;
+
+  navImgBox.style.transform = `translateY(${scrolled}px)`;
+  navImg.style.transform = `translate(50%, ${scrolled * -0.25}px)`;
+  console.log(scrolled);
+}
 
 function displayNav() {
   navMenu.style.top = "0";
@@ -29,3 +41,4 @@ mediaWidth.addListener(matchMediaWidth); // <================================== 
 
 openNav.addEventListener("click", displayNav);
 closeNav.addEventListener("click", hideNav);
+window.addEventListener("scroll", parallax);
