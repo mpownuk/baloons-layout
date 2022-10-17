@@ -38,6 +38,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .button--wrapper {
@@ -140,8 +141,8 @@ svg {
 }
 
 .nav .nav--img--box .nav--img {
-  height: 100%;
-  width: auto;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .nav svg {
