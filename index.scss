@@ -233,7 +233,7 @@ svg {
     margin-bottom: 14rem;
     overflow: hidden;
     position: relative;
-    background-image: url("pics/pexels-siva-seshappan-13767040.jpg");
+    background-image: url("pics/pexels-siva-seshappan-13767040-min.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -293,8 +293,6 @@ svg {
       }
     }
   }
-}
-.gallery--testimonials {
 }
 
 .testimonials--list {
@@ -409,6 +407,6 @@ svg {
     }
   }
   .gallery--photos {
-    grid-template-columns: 50fr 40fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
