@@ -18,6 +18,9 @@
   .main .gallery--photos {
     grid-template-columns: 1fr 1fr;
   }
+  .footer {
+    column-gap: 4rem;
+  }
 }
 
 @media screen and (min-width: 45em) {
@@ -50,5 +53,9 @@
 @media screen and (min-width: 57em) {
   .main .container {
     max-width: 50rem;
+  }
+  .footer {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 90%;
   }
 }
