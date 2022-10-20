@@ -4,7 +4,7 @@ const navMenu = document.querySelector(".nav--menu");
 const navImgBox = document.querySelector(".nav--img--box");
 const navImg = document.querySelector(".nav--img");
 
-const mediaWidth = window.matchMedia("(min-width: 600px)");
+const mediaWidth = window.matchMedia("(min-width: 37em)");
 
 let scrolled;
 

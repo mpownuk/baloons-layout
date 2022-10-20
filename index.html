@@ -9,6 +9,8 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="media.css" />
+
     <title>Layout Example</title>
     <script src="index.js" defer></script>
   </head>
@@ -65,7 +67,7 @@
       </div>
     </nav>
     <main class="main">
-      <section class="main--container grid">
+      <section class="main--container container grid">
         <div class="main--gallery">
           <div>
             <img
@@ -75,7 +77,7 @@
           </div>
           <div>
             <h2>baloon one</h2>
-            <p>
+            <p class="margin--bottom">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Exercitationem expedita facilis natus ipsam laudantium nesciunt
               qui quod id maxime. Cum, totam consectetur cupiditate quibusdam
@@ -90,7 +92,7 @@
           </div>
           <div class="main--gallery--item2">
             <h2>baloon two</h2>
-            <p>
+            <p class="margin--bottom">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Architecto maxime assumenda quos, quia praesentium eos harum
               aliquam nam recusandae voluptates! Doloremque beatae odio enim
@@ -125,7 +127,7 @@
           </div>
         </div>
       </section>
-      <section class="section--locations grid">
+      <section class="section--locations container grid">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -418,7 +420,7 @@
         </div>
       </section>
 
-      <section class="section--testimonials grid">
+      <section class="section--testimonials container grid">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -475,11 +477,11 @@
               />
             </g>
           </svg>
-          <h2>Unforgettable experiences!</h2>
+          <h2 class="margin--bottom">Unforgettable experiences!</h2>
         </div>
         <div class="testimonials">
           <ul class="testimonials--list">
-            <li>
+            <li class="testimonial--one">
               <blockquote class="bgcolor--one">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
                 nisi cum saepe. Lorem ipsum dolor sit amet consectetur.
@@ -494,7 +496,7 @@
                 <p class="testimonials--job">Office worker</p>
               </figure>
             </li>
-            <li>
+            <li class="testimonial--two">
               <blockquote class="bgcolor--two">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
                 dignissimos iure eaque maxime dolores magni, magnam unde.
@@ -509,7 +511,7 @@
                 <p class="testimonials--job">Farmer</p>
               </figure>
             </li>
-            <li>
+            <li class="testimonial--three">
               <blockquote class="bgcolor--three">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Repellendus facere qui corporis voluptate fugit? Neque iste
