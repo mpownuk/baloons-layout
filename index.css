@@ -227,12 +227,12 @@ svg {
   text-transform: uppercase;
 }
 
-.main .main--container .main--gallery {
+.main .equipment {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.main .main--container .main--gallery div {
+.main .equipment div {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -242,7 +242,7 @@ svg {
   margin-bottom: 4rem;
 }
 
-.main .main--container .main--gallery div img {
+.main .equipment div img {
   width: 100%;
   height: auto;
 }
