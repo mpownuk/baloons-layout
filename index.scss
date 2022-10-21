@@ -224,22 +224,20 @@ svg {
 //........MAIN........//
 
 .main {
-  .main--container {
-    .main--gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      div {
-        display: flex;
-        flex-direction: column;
+  .equipment {
+    display: grid;
+    grid-template-columns: 1fr;
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4rem;
+      img {
         width: 100%;
         height: auto;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 4rem;
-        img {
-          width: 100%;
-          height: auto;
-        }
       }
     }
   }
