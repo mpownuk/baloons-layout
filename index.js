@@ -4,13 +4,15 @@ const navMenu = document.querySelector(".nav--menu");
 const navImgBox = document.querySelector(".nav--img--box");
 const navImg = document.querySelector(".nav--img");
 
+const calendar = document.querySelector(".calendar");
+
 const mediaWidth = window.matchMedia("(min-width: 37em)");
 
 let scrolled;
 
 function parallax() {
   scrolled = window.scrollY;
-
+  // calendar.style.transform = `translateY(${scrolled}px)`;
   navImgBox.style.transform = `translateY(${scrolled}px)`;
   navImg.style.transform = `translate(50%, ${scrolled * -0.25}px)`;
   console.log(scrolled);
@@ -42,3 +44,11 @@ mediaWidth.addListener(matchMediaWidth); // <================================== 
 openNav.addEventListener("click", displayNav);
 closeNav.addEventListener("click", hideNav);
 window.addEventListener("scroll", parallax);
+
+//======paralax cd=======//
+
+var bodyRect = document.body.getBoundingClientRect(),
+  elemRect = element.getBoundingClientRect(),
+  offset = elemRect.top - bodyRect.top;
+
+alert("Element is " + offset + " vertical pixels from <body>");
