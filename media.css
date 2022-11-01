@@ -12,7 +12,7 @@
     background-color: transparent;
     top: 0;
   }
-  .nav .nav--container .nav--container__header--box h1 {
+  .nav h1 {
     font-size: 5rem;
   }
   .main .gallery--photos {

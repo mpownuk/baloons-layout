@@ -13,14 +13,12 @@
       background-color: transparent;
       top: 0;
     }
-    .nav--container {
-      .nav--container__header--box {
-        h1 {
-          font-size: 5rem;
-        }
-      }
+
+    h1 {
+      font-size: 5rem;
     }
   }
+
   .main {
     .gallery--photos {
       grid-template-columns: 1fr 1fr;
