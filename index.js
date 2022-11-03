@@ -1,4 +1,4 @@
-const navEl = document.querySelectorAll(".navEl");
+const paralaxEl = document.querySelectorAll(".paralaxEl");
 const openNav = document.querySelector(".open--nav");
 const closeNav = document.querySelector(".close--nav");
 const navMenu = document.querySelector(".nav--menu");
@@ -29,11 +29,17 @@ mediaWidth.addListener(matchMediaWidth); // <================================== 
 
 function paralax() {
   let viewportHeight = window.innerHeight;
-  navEl.forEach((navElem) => {
-    if (Math.floor(navElem.getBoundingClientRect().y) - viewportHeight <= 0) {
-      navElem.style.transform = `translate(50%,${
-        navElem.getBoundingClientRect().y * -0.5
+  paralaxEl.forEach((paralaxElem) => {
+    let check = paralaxElem.getBoundingClientRect().y * -0.5;
+
+    if (
+      Math.floor(paralaxElem.getBoundingClientRect().y) - viewportHeight <=
+      0
+    ) {
+      paralaxElem.style.transform = `translate(50%,${
+        paralaxElem.getBoundingClientRect().y * -0.5
       }px)`;
+      console.log(paralaxElem.alt + " " + check);
     }
   });
 }

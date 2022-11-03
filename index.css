@@ -51,10 +51,6 @@ a:active {
   border-bottom: solid 1px #6b0f13;
 }
 
-.margin--bottom {
-  margin-bottom: 4rem;
-}
-
 .header--wrapper {
   position: relative;
   width: 100%;
@@ -131,6 +127,10 @@ svg {
   transform: translate(-50%, -50%);
   fill: #ccf3ff;
   z-index: -1;
+}
+
+.margin--bottom {
+  margin-bottom: 4rem;
 }
 
 .margin--btm--14rem, .nav, .main .section--calendar {
