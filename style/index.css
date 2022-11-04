@@ -4,24 +4,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 html {
-  font-size: 100%;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 62.5%;
 }
 
 body {
+  font-size: 1.6rem;
   color: #6b0f13;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  padding: 4rem 0;
-  gap: 4rem;
-  margin-bottom: 7rem;
 }
 
 h2 {
@@ -52,27 +44,31 @@ a:active {
 }
 
 .header--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
   position: relative;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
 .button--wrapper {
-  border-radius: 100px;
-  border: solid 1px #f7f7f7;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 0;
+  border-radius: 100px;
+  border: solid 1px #f7f7f7;
 }
 
 button {
   color: #f7f7f7;
   border: none;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
   font-style: italic;
   font-weight: 900;
@@ -103,6 +99,7 @@ ul {
 
 ul li {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 0.6rem;
@@ -129,19 +126,14 @@ svg {
   z-index: -1;
 }
 
-.margin--bottom {
-  margin-bottom: 4rem;
-}
-
-.margin--btm--14rem, .nav, .main .section--calendar {
-  margin-bottom: 14rem;
-}
-
 .nav, .main .section--calendar {
   display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  border-bottom: dashed purple 10px;
+  margin-bottom: 14rem;
   grid-template-rows: auto auto;
   width: 100%;
-  gap: 1rem;
   height: 110vh;
   position: relative;
   overflow: hidden;
@@ -160,11 +152,13 @@ svg {
 }
 
 .nav .nav--menu, .main .section--calendar .nav--menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 1rem;
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
   position: absolute;
   top: -100%;
   transition: 0.3s;
@@ -209,16 +203,19 @@ svg {
 
 .main .equipment {
   display: grid;
+  gap: 0;
   grid-template-columns: 1fr;
+  border-bottom: dashed purple 10px;
 }
 
 .main .equipment div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
   width: 100%;
   height: auto;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 4rem;
 }
 
@@ -247,7 +244,9 @@ svg {
 .main .section--locations .location {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
+  gap: 0;
 }
 
 .main .section--locations .location img {
@@ -268,7 +267,7 @@ svg {
 }
 
 .main .section--locations .location .button--wrapper button {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   padding: 0.4rem 0.4rem;
   color: #6b0f13;
 }
@@ -279,15 +278,15 @@ svg {
   padding: 0.4rem 1.4rem;
 }
 
-.testimonials--list {
+.main .testimonials--list {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  gap: 1rem;
-  gap: 1rem;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 3rem 1rem;
 }
 
-.testimonials--list li {
+.main .testimonials--list li {
   max-width: 25rem;
   overflow: hidden;
   border-radius: 0.6rem;
@@ -296,44 +295,46 @@ svg {
   box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.1);
 }
 
-.testimonials--list figure {
+.main .testimonials--list figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  gap: 1rem 3rem;
   padding: 4.6rem 3rem 2.2rem 3rem;
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.testimonials--list blockquote {
+.main .testimonials--list blockquote {
   width: 100%;
   text-align: center;
   font-size: 1rem;
   padding: 3rem 3rem 4.6rem 3rem;
 }
 
-.testimonials--list .bgcolor--one {
+.main .testimonials--list .bgcolor--one {
   background-color: #faebd7;
 }
 
-.testimonials--list .bgcolor--two {
+.main .testimonials--list .bgcolor--two {
   background-color: #e6f6f1;
 }
 
-.testimonials--list .bgcolor--three {
+.main .testimonials--list .bgcolor--three {
   background-color: #e7eef3;
 }
 
-.testimonials--list .testimonials--name {
+.main .testimonials--list .testimonials--name {
   font-size: 1.4rem;
 }
 
-.testimonials--list .testimonials--job {
+.main .testimonials--list .testimonials--job {
   gap: 1rem;
   font-size: 0.8rem;
 }
 
-.testimonials--img {
+.main .testimonials--list .testimonials--img {
   width: 7.8rem;
   border-radius: 50%;
   position: absolute;
@@ -342,29 +343,32 @@ svg {
   transform: translateY(-50%);
 }
 
-.gallery--photos {
+.main .gallery--photos {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
+  grid-template-columns: 1fr;
+  border-bottom: dashed purple 10px;
 }
 
-.gallery--photos--col {
+.main .gallery--photos--col {
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
   gap: 1rem;
 }
 
-.gallery--photo {
+.main .gallery--photo {
   overflow: hidden;
 }
 
-.gallery--photo img {
+.main .gallery--photo img {
   display: block;
   width: 100%;
   transition: all 0.3s;
 }
 
-.gallery--photo img:hover {
+.main .gallery--photo img:hover {
   transform: scale(1.1);
 }
 
@@ -378,36 +382,38 @@ svg {
   margin: 6rem auto 8rem auto;
   max-width: 30rem;
   display: grid;
+  gap: 3em 1rem;
   grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  row-gap: 3rem;
+  border-bottom: dashed purple 10px;
   justify-content: center;
 }
 
-.footer .footer--copyright {
+.footer--copyright {
   display: flex;
   flex-direction: column;
 }
 
-.footer .footer--copyright .footer--p {
+.footer--copyright--p {
   margin: 0;
 }
 
-.footer .footer--contact address {
+.footer--contact address {
   font-style: normal;
 }
 
-.footer .footer--list {
+.footer--list {
   margin: 0;
 }
 
-.footer .footer--media {
+.footer--media {
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
   gap: 1.6rem;
 }
 
-.footer .footer--media input {
+.footer--media input {
   width: 13rem;
   padding: 0.4rem;
   border: none;
@@ -415,12 +421,12 @@ svg {
   color: #6b0f13;
 }
 
-.footer .footer--media input::placeholder {
+.footer--media input::placeholder {
   font-style: italic;
   color: rgba(107, 15, 20, 0.6);
 }
 
-.footer .footer--media .footer--icon {
+.footer--media--icon {
   width: 1.6rem;
   height: 1.6rem;
   fill: #6b0f13;
