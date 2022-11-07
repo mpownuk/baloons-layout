@@ -1,1 +1,5 @@
 file.txt
+partials/_reset.css
+partials/_reset.min.css
+main.css
+main.min.css
