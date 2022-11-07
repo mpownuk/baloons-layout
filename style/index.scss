@@ -2,7 +2,7 @@
 @import 'maps/testimonials';
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 2rem;
@@ -34,6 +34,8 @@ a:active {
   @include flex(row,center, center,0);
   border-radius: 100px;
   border: solid 1px #f7f7f7;
+  overflow: hidden;
+
 }
 button {
   color: $nav-txt-color;
@@ -80,8 +82,8 @@ svg {
 }
 
 .bg--svg {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -94,7 +96,7 @@ svg {
 //......NAVIGATION....//
 
 .nav {
-  @include grid(1fr, 1rem);
+  @include grid(1fr, 1rem, stretch);
   margin-bottom:  $margin--bottom--14rem;
   grid-template-rows: auto auto;
   width: 100%;
@@ -107,7 +109,7 @@ svg {
     top: 0;
     right: 50%;
     min-width: 100vw;
-    min-height: 100vh;
+    min-height: 110vh;
     transform: translateX(50%);
     z-index: -1;
     filter: brightness(0.5);
@@ -157,8 +159,17 @@ svg {
 //........MAIN........//
 
 .main {
+  @include grid(1fr, 18rem, stretch);
+  margin-bottom:  $margin--bottom--14rem;
+.section-equipment{
+  @include grid(1fr, 5rem, center);
   .equipment {
-    @include grid(1fr, 0);
+    @include grid(1fr, 0, stretch);
+    //................//
+    //must be repaired//
+    //................//
+
+
     div {
       @include flex(column,center, center,0);
       width: 100%;
@@ -170,8 +181,10 @@ svg {
       }
     }
   }
+}
   .section--calendar {
     @extend .nav;
+    margin-bottom: 0;
     h2 {
       font-size: 2.5rem;
       font-weight: 300;
@@ -185,6 +198,8 @@ svg {
   }
 
   .section--locations {
+    @include grid(1fr, 5rem, stretch);
+
     h2 {
       justify-self: center;
       grid-column: 1/-1;
@@ -203,7 +218,6 @@ svg {
       .button--wrapper {
         border: solid 1px #6b0f13;
         margin: 1rem 0 2.5rem 2rem;
-        overflow: hidden;
 
         button {
           font-size: 1.2rem;
@@ -219,56 +233,62 @@ svg {
     }
   }
 
-.testimonials--list {
-  @include flex(column, stretch, stretch, 3rem 1rem);
-  li {
-    max-width: 25rem;
-    overflow: hidden;
-    border-radius: 0.6rem;
-    gap: 0;
-    flex-direction: column;
-    box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.1);
-  }
-  figure {
-    @include flex(column, stretch, center, 1rem 3rem);
-    padding: 4.6rem 3rem 2.2rem 3rem;
-    position: relative;
-    width: 100%;
-  }
-  blockquote {
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    padding: 3rem 3rem 4.6rem 3rem;
-  }
-  .bgcolor--one {
-    background-color: map-get($card--bg--colors, 'colorOne')
-  }
-  .bgcolor--two {
-    background-color: map-get($card--bg--colors, 'colorTwo')
-  }
-  .bgcolor--three {
-    background-color: map-get($card--bg--colors, 'colorThree')
-  }
-  .testimonials--name {
-    font-size: 1.4rem;
-  }
-  .testimonials--job {
-    gap: 1rem;
-    font-size: 0.8rem;
-  }
-  .testimonials--img {
-    width: 7.8rem;
-    border-radius: 50%;
-    position: absolute;
-    gap: 1rem;
-    top: 0;
-    transform: translateY(-50%);
+.section--testimonials{
+  @include grid(1fr, 4rem, stretch);
+  justify-items: center;
+  .testimonials--list {
+    @include flex(column, stretch, stretch, 3rem 1rem);
+    li {
+      max-width: 30rem;
+      overflow: hidden;
+      border-radius: 0.6rem;
+      gap: 0;
+      flex-direction: column;
+      box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.1);
+    }
+    figure {
+      @include flex(column, stretch, center, 1rem 3rem);
+      padding: 4.6rem 3rem 2.2rem 3rem;
+      position: relative;
+      width: 100%;
+    }
+    blockquote {
+      width: 100%;
+      text-align: center;
+      font-size: 1.4rem;
+      padding: 3rem 3rem 5.6rem 3rem;
+    }
+    .bgcolor--one {
+      background-color: map-get($card--bg--colors, 'colorOne')
+    }
+    .bgcolor--two {
+      background-color: map-get($card--bg--colors, 'colorTwo')
+    }
+    .bgcolor--three {
+      background-color: map-get($card--bg--colors, 'colorThree')
+    }
+    .testimonials--name {
+      font-size: 1.8rem;
+    }
+    .testimonials--job {
+      gap: 1rem;
+      font-size: 1.4rem;
+    }
+    .testimonials--img {
+      width: 7.8rem;
+      border-radius: 50%;
+      position: absolute;
+      gap: 1rem;
+      top: 0;
+      transform: translateY(-50%);
+    }
   }
 }
 
-.gallery--photos {
-  @include grid(1fr, 1rem);
+.section--gallery {
+  @include grid(1fr, 5rem, stretch);
+  .gallery--photos {
+  @include grid(1fr, 1rem, stretch);
   &--col {
     @include flex(column, stretch, stretch, 1rem);
   }
@@ -285,6 +305,7 @@ svg {
   }
 }
 }
+}
 .break {
   width: 100%;
   height: 1px;
@@ -292,15 +313,10 @@ svg {
 }
 .footer {
   margin: 6rem auto 8rem auto;
-  max-width: 30rem;
-  @include grid(1fr 1fr, 3em 1rem);
-  justify-content: center;
+  max-width: 42rem;
+  @include grid(1fr 1fr, 3rem 2rem, stretch);
   &--copyright {
-    display: flex;
-    flex-direction: column;
-    &--p {
-      margin: 0;
-    }
+    @include flex(column, stretch, stretch, 1rem);
   }
   &--contact {
     address {
@@ -309,9 +325,19 @@ svg {
   }
   &--list {
     margin: 0;
+    li{     line-height: 1.8;
+      div {
+        margin-top:1.8rem;
+        .footer--icon {
+          width: 2.6rem;
+          height: 2.6rem;
+          fill: #6b0f13;
+        }
+      }
+    }
   }
   &--media {
-    @include flex(column, stretch, stretch, 1.6rem);
+    @include flex(column, stretch, stretch, 3.2rem);
     input {
       width: 13rem;
       padding: 0.4rem;
@@ -323,10 +349,6 @@ svg {
       font-style: italic;
       color: rgba(107, 15, 20, 0.6);
     }
-   &--icon {
-      width: 1.6rem;
-      height: 1.6rem;
-      fill: #6b0f13;
-    }
+
   }
 }

@@ -1,8 +1,8 @@
-@mixin  grid($columns, $gap) {
+@mixin  grid($columns, $gap, $justify-items) {
     display: grid;
     gap: $gap;
     grid-template-columns: $columns;
-    // justify-items: center;
+    justify-items: $justify-items;
     // padding: 4rem 0;
     // gap: 4rem;
     // margin-bottom: 7rem;
