@@ -1,10 +1,8 @@
-@mixin  grid($columns, $gap, $justify-items) {
-    display: grid;
-    gap: $gap;
-    grid-template-columns: $columns;
-    justify-items: $justify-items;
-    // padding: 4rem 0;
-    // gap: 4rem;
-    // margin-bottom: 7rem;
-    border-bottom: dashed purple 10px ;
+@mixin grid($columns, $row-gap, $column-gap, $justify-items) {
+  display: grid;
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+  grid-template-columns: $columns;
+  justify-items: $justify-items;
+  // border-bottom: dashed purple 10px;
 }
