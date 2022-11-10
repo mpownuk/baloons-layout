@@ -22,7 +22,7 @@
     z-index: -1;
     filter: brightness(0.5);
   }
-  .nav--menu {
+  &--menu {
     @include flex(column, stretch, stretch, 1rem);
     background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -63,28 +63,26 @@
 //........MAIN........//
 
 .main {
-  @include grid(1fr, 18rem, 0, stretch);
+  @include grid(1fr, 18rem, 0, center);
   margin-bottom: $margin--bottom--18rem;
-  .section--equipment {
-    .equipment {
-      @include grid(1fr, 0, 0, stretch);
-      //................//
-      //must be repaired//
-      //................//
+  .equipment {
+    @include grid(1fr, 0, 0, stretch);
+    //................//
+    //must be repaired//
+    //................//
 
-      div {
-        @include flex(column, center, center, 0);
+    div {
+      @include flex(column, center, center, 0);
+      width: 100%;
+      height: auto;
+      margin-bottom: 4rem;
+      img {
         width: 100%;
         height: auto;
-        margin-bottom: 4rem;
-        img {
-          width: 100%;
-          height: auto;
-        }
       }
     }
   }
-  .section--calendar {
+  .calendar {
     @extend .nav;
     margin-bottom: 0;
     h2 {
@@ -99,7 +97,7 @@
     }
   }
 
-  .section--locations {
+  .locations {
     @include grid(1fr, 5rem, 5rem, stretch);
 
     h2 {
@@ -134,11 +132,12 @@
     }
   }
 
-  .section--testimonials {
+  .testimonials {
     @include grid(1fr, 4rem, 4rem, stretch);
     justify-items: center;
-    .testimonials--list {
+    &--list {
       @include grid(1fr, 4rem, 1rem, stretch);
+      margin: 1rem 2rem;
       li {
         max-width: 46rem;
         overflow: hidden;
@@ -168,13 +167,13 @@
       .bgcolor--three {
         background-color: map-get($card--bg--colors, "colorThree");
       }
-      .testimonials--name {
+      &--name {
         font-size: 2.4rem;
       }
-      .testimonials--job {
+      &--job {
         font-size: 1.8rem;
       }
-      .testimonials--img {
+      &--img {
         width: 12.4rem;
         border-radius: 50%;
         position: absolute;
@@ -184,15 +183,15 @@
     }
   }
 
-  .section--gallery {
+  .gallery {
     @include grid(1fr, 5rem, 5rem, stretch);
-    .gallery--photos {
+    &--photos {
       @include grid(1fr, 1rem, 1rem, stretch);
       &--col {
         @include flex(column, space-between, stretch, 1rem);
       }
     }
-    .gallery--photo {
+    &--photo {
       overflow: hidden;
       img {
         display: block;
@@ -213,7 +212,7 @@
 .footer {
   margin: 6rem auto 8rem auto;
   max-width: 42rem;
-  @include grid(1fr 1fr, 3rem, 2rem, stretch);
+  @include grid(1fr 1fr, 3rem, 2rem, center);
   &--copyright {
     @include flex(column, stretch, stretch, 1rem);
   }
