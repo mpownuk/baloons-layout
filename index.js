@@ -3,7 +3,7 @@ const openNav = document.querySelector(".open--nav");
 const closeNav = document.querySelector(".close--nav");
 const navMenu = document.querySelector(".nav--menu");
 
-const mediaWidth = window.matchMedia("(min-width: 37em)");
+const mediaWidth = window.matchMedia("(min-width: 57em)");
 
 function displayNav() {
   navMenu.style.top = "0";

@@ -4,25 +4,13 @@
 
 @media screen and (min-width: 37em) {
   .nav {
-    .hamburger {
-      display: none;
-    }
-    .nav--menu {
-      @include flex(row, space-evenly, center, 0);
-      grid-column: 1;
-      grid-row: 1;
-      padding: 2rem 0;
-      background-color: transparent;
-      top: 0;
-    }
-
     h1 {
       font-size: 8rem;
     }
   }
 
   .main {
-    .section--gallery {
+    .gallery {
       .gallery--photos {
         @include grid(1fr 1fr, 1rem, 1rem, stretch);
       }
@@ -34,17 +22,16 @@
 }
 @media screen and (min-width: 45em) {
   .main {
-    .container {
-      max-width: 42rem;
-      margin: auto auto 7rem auto;
+    .max--width {
+      max-width: 67rem;
+      margin: 1rem 2rem;
     }
     .location {
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
-    .section--testimonials {
+    .testimonials {
       .testimonials--list {
         @include grid(1fr 1fr, 3rem, 3rem, stretch);
-        grid-template-rows: 1fr 1fr 1fr 1fr;
         .testimonial--one {
           grid-row: 1/3;
         }
@@ -60,9 +47,22 @@
   }
 }
 @media screen and (min-width: 57em) {
+  .nav {
+    .hamburger {
+      display: none;
+    }
+    .nav--menu {
+      @include flex(row, space-evenly, center, 0);
+      grid-column: 1;
+      grid-row: 1;
+      padding: 2rem 0;
+      background-color: transparent;
+      top: 0;
+    }
+  }
   .main {
-    .container {
-      max-width: 50rem;
+    .max--width {
+      max-width: 80rem;
     }
   }
   .footer {
@@ -72,33 +72,35 @@
 }
 @media screen and (min-width: 78em) {
   .main {
-    .section--equipment {
-      .equipment {
-        @include grid(1fr 1fr, 0, 0, stretch);
-        .header--wrapper {
-          grid-column: 1/-1;
-          margin-bottom: $margin--bottom--5rem;
-        }
-        div {
-          margin-bottom: 0;
-        }
-        .equipment--item2 {
-          grid-row: 3;
-          grid-column: 1;
-        }
-        .equipment--item2--img {
-          grid-row: 3;
-          grid-column: 2;
-        }
+    .max--width {
+      max-width: 148rem;
+    }
+    .equipment {
+      @include grid(1fr 1fr, 0, 0, stretch);
+      .header--wrapper {
+        grid-column: 1/-1;
+        margin-bottom: $margin--bottom--5rem;
+      }
+      div {
+        margin-bottom: 0;
+      }
+      .equipment--item2 {
+        grid-row: 3;
+        grid-column: 1;
+      }
+      .equipment--item2--img {
+        grid-row: 3;
+        grid-column: 2;
       }
     }
-    .section--locations {
+
+    .locations {
       grid-template-columns: 1fr 1fr 1fr;
       .header--wrapper {
         grid-column: 1/-1;
       }
     }
-    .section--testimonials {
+    .testimonials {
       .testimonials--list {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(7, 1fr);

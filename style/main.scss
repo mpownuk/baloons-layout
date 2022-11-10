@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 @import "partials/reset";
 @import "partials/variables";
 @import "mixins/grid";
 @import "mixins/flex";
+@import "mixins/heading";
 
 html {
   font-family: "Roboto Condensed", sans-serif;
@@ -15,20 +15,14 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
-  color: $nav-txt-color;
-  letter-spacing: 2px;
-  font-style: italic;
-  text-transform: uppercase;
+  @include heading(6rem, italic, $nav-txt-color, 2px, uppercase);
 }
 h2 {
-  font-size: 2.4rem;
-  letter-spacing: 2px;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
+  @include heading(2.4rem, italic, inherit, 2px, uppercase);
+  margin-bottom: $margin--bottom--2rem;
 }
 h3 {
-  text-transform: uppercase;
+  @include heading(1.8rem, italic, inherit, 1px, uppercase);
 }
 p {
   line-height: 2;

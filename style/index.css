@@ -17,20 +17,26 @@ body {
 
 h1 {
   font-size: 6rem;
+  font-style: italic;
   color: #f7f7f7;
   letter-spacing: 2px;
-  font-style: italic;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: 2.4rem;
+  font-style: italic;
+  color: inherit;
   letter-spacing: 2px;
-  margin-bottom: 2rem;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 h3 {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: inherit;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -138,7 +144,7 @@ svg {
   z-index: -1;
 }
 
-.nav, .main .section--calendar {
+.nav, .main .calendar {
   display: grid;
   row-gap: 1rem;
   column-gap: 1rem;
@@ -153,7 +159,7 @@ svg {
   text-align: center;
 }
 
-.nav img, .main .section--calendar img {
+.nav img, .main .calendar img {
   position: absolute;
   top: 0;
   right: 50%;
@@ -164,7 +170,7 @@ svg {
   filter: brightness(0.5);
 }
 
-.nav .nav--menu, .main .section--calendar .nav--menu {
+.nav--menu {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -179,30 +185,30 @@ svg {
   padding: 4rem 0;
 }
 
-.nav svg, .main .section--calendar svg {
+.nav svg, .main .calendar svg {
   width: 32px;
   height: 32px;
   stroke: #f7f7f7;
   margin: 1rem;
 }
 
-.nav svg:hover, .main .section--calendar svg:hover {
+.nav svg:hover, .main .calendar svg:hover {
   cursor: pointer;
 }
 
-.nav .hamburger, .main .section--calendar .hamburger {
+.nav .hamburger, .main .calendar .hamburger {
   position: absolute;
   grid-column: 1;
   grid-row: 1;
   z-index: 4;
 }
 
-.nav .hamburger .close--nav, .main .section--calendar .hamburger .close--nav {
+.nav .hamburger .close--nav, .main .calendar .hamburger .close--nav {
   display: none;
   position: absolute;
 }
 
-.nav h1, .main .section--calendar h1 {
+.nav h1, .main .calendar h1 {
   grid-row: 2;
   display: inline-block;
   padding: 0 2rem;
@@ -215,11 +221,11 @@ svg {
   row-gap: 18rem;
   column-gap: 0;
   grid-template-columns: 1fr;
-  justify-items: stretch;
+  justify-items: center;
   margin-bottom: 18rem;
 }
 
-.main .section--equipment .equipment {
+.main .equipment {
   display: grid;
   row-gap: 0;
   column-gap: 0;
@@ -227,7 +233,7 @@ svg {
   justify-items: stretch;
 }
 
-.main .section--equipment .equipment div {
+.main .equipment div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -238,28 +244,28 @@ svg {
   margin-bottom: 4rem;
 }
 
-.main .section--equipment .equipment div img {
+.main .equipment div img {
   width: 100%;
   height: auto;
 }
 
-.main .section--calendar {
+.main .calendar {
   margin-bottom: 0;
 }
 
-.main .section--calendar h2 {
+.main .calendar h2 {
   font-size: 2.5rem;
   font-weight: 300;
   color: #f7f7f7;
   align-self: end;
 }
 
-.main .section--calendar .button--wrapper {
+.main .calendar .button--wrapper {
   align-self: start;
   justify-self: center;
 }
 
-.main .section--locations {
+.main .locations {
   display: grid;
   row-gap: 5rem;
   column-gap: 5rem;
@@ -267,12 +273,12 @@ svg {
   justify-items: stretch;
 }
 
-.main .section--locations h2 {
+.main .locations h2 {
   justify-self: center;
   grid-column: 1/-1;
 }
 
-.main .section--locations .location {
+.main .locations .location {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -280,34 +286,34 @@ svg {
   gap: 0;
 }
 
-.main .section--locations .location img {
+.main .locations .location img {
   width: 100%;
   height: auto;
   margin-bottom: 2rem;
 }
 
-.main .section--locations .location h3 {
+.main .locations .location h3 {
   margin: 0 0 1rem 2rem;
 }
 
-.main .section--locations .location .button--wrapper {
+.main .locations .location .button--wrapper {
   border: solid 1px #6b0f13;
   margin: 1rem 0 2.5rem 2rem;
 }
 
-.main .section--locations .location .button--wrapper button {
+.main .locations .location .button--wrapper button {
   font-size: 1.2rem;
   padding: 0.4rem 0.4rem;
   color: #6b0f13;
 }
 
-.main .section--locations .location .button--wrapper button:hover {
+.main .locations .location .button--wrapper button:hover {
   color: #f7f7f7;
   background-color: #6b0f13;
   padding: 0.4rem 1.4rem;
 }
 
-.main .section--testimonials {
+.main .testimonials {
   display: grid;
   row-gap: 4rem;
   column-gap: 4rem;
@@ -316,15 +322,16 @@ svg {
   justify-items: center;
 }
 
-.main .section--testimonials .testimonials--list {
+.main .testimonials--list {
   display: grid;
   row-gap: 4rem;
   column-gap: 1rem;
   grid-template-columns: 1fr;
   justify-items: stretch;
+  margin: 1rem 2rem;
 }
 
-.main .section--testimonials .testimonials--list li {
+.main .testimonials--list li {
   max-width: 46rem;
   overflow: hidden;
   border-radius: 0.6rem;
@@ -332,7 +339,7 @@ svg {
   box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.1);
 }
 
-.main .section--testimonials .testimonials--list figure {
+.main .testimonials--list figure {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -343,7 +350,7 @@ svg {
   width: 100%;
 }
 
-.main .section--testimonials .testimonials--list blockquote {
+.main .testimonials--list blockquote {
   width: 100%;
   text-align: center;
   font-size: 1.8rem;
@@ -351,27 +358,27 @@ svg {
   line-height: 1.8;
 }
 
-.main .section--testimonials .testimonials--list .bgcolor--one {
+.main .testimonials--list .bgcolor--one {
   background-color: #faebd7;
 }
 
-.main .section--testimonials .testimonials--list .bgcolor--two {
+.main .testimonials--list .bgcolor--two {
   background-color: #e6f6f1;
 }
 
-.main .section--testimonials .testimonials--list .bgcolor--three {
+.main .testimonials--list .bgcolor--three {
   background-color: #e7eef3;
 }
 
-.main .section--testimonials .testimonials--list .testimonials--name {
+.main .testimonials--list--name {
   font-size: 2.4rem;
 }
 
-.main .section--testimonials .testimonials--list .testimonials--job {
+.main .testimonials--list--job {
   font-size: 1.8rem;
 }
 
-.main .section--testimonials .testimonials--list .testimonials--img {
+.main .testimonials--list--img {
   width: 12.4rem;
   border-radius: 50%;
   position: absolute;
@@ -379,7 +386,7 @@ svg {
   transform: translateY(-50%);
 }
 
-.main .section--gallery {
+.main .gallery {
   display: grid;
   row-gap: 5rem;
   column-gap: 5rem;
@@ -387,7 +394,7 @@ svg {
   justify-items: stretch;
 }
 
-.main .section--gallery .gallery--photos {
+.main .gallery--photos {
   display: grid;
   row-gap: 1rem;
   column-gap: 1rem;
@@ -395,7 +402,7 @@ svg {
   justify-items: stretch;
 }
 
-.main .section--gallery .gallery--photos--col {
+.main .gallery--photos--col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -403,17 +410,17 @@ svg {
   gap: 1rem;
 }
 
-.main .section--gallery .gallery--photo {
+.main .gallery--photo {
   overflow: hidden;
 }
 
-.main .section--gallery .gallery--photo img {
+.main .gallery--photo img {
   display: block;
   width: 100%;
   transition: all 0.3s;
 }
 
-.main .section--gallery .gallery--photo img:hover {
+.main .gallery--photo img:hover {
   transform: scale(1.1);
 }
 
@@ -430,7 +437,7 @@ svg {
   row-gap: 3rem;
   column-gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  justify-items: stretch;
+  justify-items: center;
 }
 
 .footer--copyright {
