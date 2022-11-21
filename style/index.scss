@@ -8,7 +8,7 @@
   margin-bottom: $margin--bottom--18rem;
   grid-template-rows: auto auto;
   width: 100%;
-  height: 110vh;
+  height: 101vh;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -17,7 +17,7 @@
     top: 0;
     right: 50%;
     min-width: 100vw;
-    min-height: 110vh;
+    min-height: 101vh;
     transform: translateX(50%);
     z-index: -1;
     filter: brightness(0.5);
@@ -212,7 +212,7 @@
 .footer {
   margin: 6rem auto 8rem auto;
   max-width: 42rem;
-  @include grid(1fr 1fr, 3rem, 2rem, center);
+  @include grid(1fr 1fr, 3rem, 2rem, start);
   &--copyright {
     @include flex(column, stretch, stretch, 1rem);
   }
@@ -250,3 +250,5 @@
     }
   }
 }
+
+@import 'media'
