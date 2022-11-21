@@ -1,0 +1,147 @@
+@import '../mixins/flex';
+@import '../mixins/grid';
+@import '../partials/variables';
+@import '../maps/testimonials';
+
+.main {
+  @include grid(1fr, 18rem, 0, center);
+  margin-bottom: $margin--bottom--18rem;
+  .equipment {
+    @include grid(1fr, 0, 0, stretch);
+    //................//
+    //must be repaired//
+    //................//
+
+    &--item {
+      @include flex(column, center, center, 0);
+      width: 100%;
+      height: auto;
+      margin-bottom: 4rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .calendar {
+    @extend .nav;
+    margin-bottom: 0;
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: $nav-txt-color;
+      align-self: end;
+    }
+    .button--wrapper {
+      align-self: start;
+      justify-self: center;
+    }
+  }
+
+  .locations {
+    @include grid(1fr, 5rem, 5rem, stretch);
+
+    h2 {
+      justify-self: center;
+      grid-column: 1/-1;
+    }
+    .location {
+      @include flex(column, center, flex-start, 0);
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+      }
+      h3 {
+        margin: 0 0 1rem 2rem;
+      }
+      .button--wrapper {
+        border: solid 1px #6b0f13;
+        margin: 1rem 0 2.5rem 2rem;
+
+        button {
+          font-size: 1.2rem;
+          padding: 0.4rem 0.4rem;
+          color: #6b0f13;
+        }
+        button:hover {
+          color: #f7f7f7;
+          background-color: #6b0f13;
+          padding: 0.4rem 1.4rem;
+        }
+      }
+    }
+  }
+
+  .testimonials {
+    @include grid(1fr, 4rem, 4rem, stretch);
+    justify-items: center;
+    &--list {
+      @include grid(1fr, 4rem, 1rem, stretch);
+      margin: 1rem 2rem;
+      li {
+        max-width: 46rem;
+        overflow: hidden;
+        border-radius: 0.6rem;
+        flex-direction: column;
+        box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.1);
+      }
+      figure {
+        @include flex(column, stretch, center, 0);
+        padding: 8rem 4.8rem 3.6rem 4.8rem;
+        position: relative;
+        width: 100%;
+      }
+      blockquote {
+        width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+        padding: 4.8rem 4.8rem 9rem 4.8rem;
+        line-height: 1.8;
+      }
+      .bgcolor--one {
+        background-color: map-get($card--bg--colors, "colorOne");
+      }
+      .bgcolor--two {
+        background-color: map-get($card--bg--colors, "colorTwo");
+      }
+      .bgcolor--three {
+        background-color: map-get($card--bg--colors, "colorThree");
+      }
+      &--name {
+        font-size: 2.4rem;
+      }
+      &--job {
+        font-size: 1.8rem;
+      }
+      &--img {
+        width: 12.4rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .gallery {
+    @include grid(1fr, 5rem, 5rem, stretch);
+    &--photos {
+      @include grid(1fr, 1rem, 1rem, stretch);
+      &--col {
+        @include flex(column, space-between, stretch, 1rem);
+      }
+    }
+    &--photo {
+      overflow: hidden;
+      img {
+        display: block;
+        width: 100%;
+        transition: all 0.3s;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -96,7 +96,9 @@
     }
 
     .locations {
-      grid-template-columns: 1fr 1fr 1fr;
+      @include grid(repeat(3, 1fr), 4rem, 2.2rem, stretch);
+
+      // grid-template-columns: 1fr 1fr 1fr;
       .header--wrapper {
         grid-column: 1/-1;
       }

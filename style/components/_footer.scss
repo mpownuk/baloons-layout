@@ -1,0 +1,46 @@
+@import '../mixins/flex';
+@import '../mixins/grid';
+@import '../partials/variables';
+
+.footer {
+  margin: 6rem auto 8rem auto;
+  max-width: 42rem;
+  @include grid(1fr 1fr, 3rem, 2rem, start);
+  &--copyright {
+    @include flex(column, stretch, stretch, 1rem);
+  }
+  &--contact {
+    address {
+      font-style: normal;
+    }
+  }
+  &--list {
+    margin: 0;
+    li {
+      line-height: 1.8;
+      div {
+        margin-top: 1.8rem;
+        .footer--icon {
+          width: 2.6rem;
+          height: 2.6rem;
+          fill: #6b0f13;
+        }
+      }
+    }
+  }
+  &--media {
+    @include flex(column, stretch, stretch, 3.2rem);
+    input {
+      width: 13rem;
+      padding: 0.4rem;
+      border: none;
+      border-bottom: $main--text--color 1px solid;
+      color: $main--text--color;
+    }
+    input::placeholder {
+      font-style: italic;
+      color: rgba(107, 15, 20, 0.6);
+    }
+  }
+}
+
