@@ -62,7 +62,7 @@
       />
     </nav>
     <main class="main">
-      <section class="about max--width">
+      <section id="about" class="about max--width">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -124,7 +124,7 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere nulla modi ut ad ratione veritatis eligendi quod. Beatae cumque in nostrum et error id laborum porro maiores odio, architecto repudiandae eveniet nam minus vel magni dolore at dolorum praesentium quasi ex autem ipsum! Deserunt quibusdam accusantium recusandae tempore! Distinctio, mollitia. Repellat, expedita. Dolore ullam illo eos omnis ad. Vel repudiandae reprehenderit nesciunt adipisci quos quaerat rerum, commodi culpa odit voluptates explicabo veritatis, eius aperiam necessitatibus sunt obcaecati. A, consequuntur? Fuga eligendi et iure delectus similique qui voluptatum natus aliquam expedita ullam nobis, modi alias quia, autem ad quo voluptates numquam.</p>
       </section>
 
-      <section class="equipment max--width">
+      <section id="equipment" class="equipment max--width">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -241,7 +241,7 @@
           alt="abc"
         />
       </section>
-      <section class="locations max--width">
+      <section id="locations" class="locations max--width">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -301,6 +301,9 @@
           <h2>Where we are flying</h2>
         </div>
         <div class="location">
+
+          <!-- need to be check!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
           <img src="pics/pexels-pixabay-210243-min.webp" alt="mountains" />
           <h3>Mountains</h3>
           <ul>
@@ -534,7 +537,7 @@
         </div>
       </section>
 
-      <section class="testimonials max--width">
+      <section id="testimonials" class="testimonials max--width">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -593,6 +596,9 @@
           </svg>
           <h2 class="margin--bottom">Unforgettable experiences!</h2>
         </div>
+
+<!-- need to be check!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
         <div class="testimonials">
           <ul class="testimonials--list">
             <li class="testimonial--one">
@@ -645,7 +651,7 @@
         </div>
       </section>
 
-      <section class="gallery">
+      <section id="gallery" class="gallery">
         <div class="header--wrapper">
           <?xml version="1.0" encoding="utf-8"?>
           <svg
@@ -808,6 +814,19 @@
           </div>
         </div>
       </section>
+      <section id="contact" class="contact max-width">
+        <form>
+          <label for="firstName"> First Name</label>
+          <input type="text" id="firstName" placeholder="First Name">
+          <label for="lastName"> Last Name</label>
+          <input type="email" id="email" placeholder="Email">
+          <label for="firstName">Adress</label>
+          <input type="text" id="city" placeholder="City">
+          <input type="text" id="street" placeholder="Street">
+          <input type="number" id="homeNumber" placeholder="22">
+          <textarea placeholder="Additional Information"></textarea>
+        </form>
+      </section>
     </main>
     <div class="break"></div>
     <footer class="footer">
@@ -833,7 +852,7 @@
       <div class="footer--media">
         <ul class="footer--list">
           <li>
-            <label for="email">Enter Your email for Newsletter!</label>
+            <label for="email">email for Newsletter!</label>
           </li>
           <li>
             <input id="email" type="email" placeholder="Your email" />
