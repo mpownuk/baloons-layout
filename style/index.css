@@ -82,7 +82,8 @@ a:active {
   overflow: hidden;
 }
 
-button {
+.button:link, .button:visited {
+  text-decoration: none;
   color: #f7f7f7;
   border: none;
   background-color: transparent;
@@ -99,7 +100,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover, .button:active {
   background-color: #f7f7f7;
   color: #4f6eb0;
   border-radius: 100px;
@@ -151,7 +152,7 @@ svg {
   background-color: #eee;
 }
 
-.nav, .main .calendar {
+.parallax, .nav, .main .calendar {
   display: grid;
   row-gap: 1rem;
   column-gap: 1rem;
@@ -166,7 +167,7 @@ svg {
   text-align: center;
 }
 
-.nav img, .main .calendar img {
+.parallax--img, .nav img, .main .calendar img {
   position: absolute;
   top: 0;
   right: 50%;
@@ -192,35 +193,61 @@ svg {
   padding: 4rem 0;
 }
 
-.nav svg, .main .calendar svg {
+.nav svg {
   width: 32px;
   height: 32px;
   stroke: #f7f7f7;
   margin: 1rem;
 }
 
-.nav svg:hover, .main .calendar svg:hover {
+.nav svg:hover {
   cursor: pointer;
 }
 
-.nav .hamburger, .main .calendar .hamburger {
+.nav .hamburger {
   position: absolute;
   grid-column: 1;
   grid-row: 1;
   z-index: 4;
 }
 
-.nav .hamburger .close--nav, .main .calendar .hamburger .close--nav {
+.nav .hamburger .close--nav {
   display: none;
   position: absolute;
 }
 
-.nav h1, .main .calendar h1 {
+.nav h1 {
   grid-row: 2;
   display: inline-block;
   padding: 0 2rem;
   align-self: start;
   justify-self: center;
+}
+
+.parallax, .nav, .main .calendar {
+  display: grid;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  margin-bottom: 18rem;
+  grid-template-rows: auto auto;
+  width: 100%;
+  height: 101vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.parallax--img, .nav img, .main .calendar img {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  min-width: 100vw;
+  min-height: 101vh;
+  transform: translateX(50%);
+  z-index: -1;
+  filter: brightness(0.5);
 }
 
 .main {
@@ -308,13 +335,13 @@ svg {
   margin: 1rem 0 2.5rem 2rem;
 }
 
-.main .locations .location .button--wrapper button {
+.main .locations .location .button--wrapper .button:link, .main .locations .location .button--wrapper .button:visited {
   font-size: 1.2rem;
   padding: 0.4rem 0.4rem;
   color: #6b0f13;
 }
 
-.main .locations .location .button--wrapper button:hover {
+.main .locations .location .button--wrapper .button:hover, .main .locations .location .button--wrapper .button:active {
   color: #f7f7f7;
   background-color: #6b0f13;
   padding: 0.4rem 1.4rem;
@@ -493,7 +520,7 @@ svg {
 }
 
 @media screen and (min-width: 37em) {
-  .nav h1, .main .calendar h1 {
+  .nav h1 {
     font-size: 8rem;
   }
   .main .gallery .gallery--photos {
@@ -519,10 +546,10 @@ svg {
 }
 
 @media screen and (min-width: 57em) {
-  .nav .hamburger, .main .calendar .hamburger {
+  .nav .hamburger {
     display: none;
   }
-  .nav .nav--menu, .main .calendar .nav--menu {
+  .nav .nav--menu {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

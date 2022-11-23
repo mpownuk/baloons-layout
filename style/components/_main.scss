@@ -2,6 +2,8 @@
 @import '../mixins/grid';
 @import '../partials/variables';
 @import '../maps/testimonials';
+@import '../classes/parallax';
+
 
 .main {
   @include grid(1fr, 18rem, 0, center);
@@ -24,8 +26,11 @@
     }
   }
   .calendar {
-    @extend .nav;
+    @extend .parallax;
     margin-bottom: 0;
+    img{
+      @extend .parallax--img;
+    }
     h2 {
       font-size: 2.5rem;
       font-weight: 300;
@@ -59,12 +64,12 @@
         border: solid 1px #6b0f13;
         margin: 1rem 0 2.5rem 2rem;
 
-        button {
+        .button:link, .button:visited {
           font-size: 1.2rem;
           padding: 0.4rem 0.4rem;
           color: #6b0f13;
         }
-        button:hover {
+        .button:hover, .button:active{
           color: #f7f7f7;
           background-color: #6b0f13;
           padding: 0.4rem 1.4rem;

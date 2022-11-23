@@ -1,26 +1,13 @@
 @import '../mixins/flex';
 @import '../mixins/grid';
 @import '../partials/variables';
+@import '../classes/parallax';
 
 
 .nav {
-  @include grid(1fr, 1rem, 1rem, stretch);
-  margin-bottom: $margin--bottom--18rem;
-  grid-template-rows: auto auto;
-  width: 100%;
-  height: 101vh;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+  @extend .parallax;
   img {
-    position: absolute;
-    top: 0;
-    right: 50%;
-    min-width: 100vw;
-    min-height: 101vh;
-    transform: translateX(50%);
-    z-index: -1;
-    filter: brightness(0.5);
+    @extend .parallax--img;
   }
   &--menu {
     @include flex(column, stretch, stretch, 1rem);

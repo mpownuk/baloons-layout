@@ -53,7 +53,8 @@ a:active {
   border: solid 1px #f7f7f7;
   overflow: hidden;
 }
-button {
+.button:link, .button:visited {
+  text-decoration: none;
   color: $nav-txt-color;
   border: none;
   background-color: transparent;
@@ -69,7 +70,7 @@ button {
   transition: 0.2s;
   cursor: pointer;
 }
-button:hover {
+.button:hover, .button:active {
   background-color: $nav-txt-color;
   color: $nav-btn-txt;
   border-radius: 100px;
