@@ -3,11 +3,30 @@
 
 //($columns, $row-gap, $column-gap, $justify-items)
 
+body {
+  max-width: 960px
+}
+
 #root {
- @include grid(repeat(7, 1fr),1rem, 1rem, start);
+ @include grid(repeat(7, 1fr),0.4rem, 0.4rem, stretch);
  min-width:1rem;
  grid-template-rows: repeat(6, 1fr);
 }
 
-#year-month {color:darkblue;
+#year-month {color:purple;
 font-size: 2rem;}
+
+.calendar--day {
+  border: solid 1px gray;
+  padding: 0.5rem;
+  height: 3rem;
+  font-size: 0.8rem;
+}
+
+.empty--field {
+  background-color: rgb(243, 243, 243);
+}
+
+button {
+  margin: 1rem;
+}

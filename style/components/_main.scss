@@ -8,17 +8,22 @@
 .main {
   @include grid(1fr, 18rem, 0, center);
   margin-bottom: $margin--bottom--18rem;
+  .about {
+    @include grid(1fr, 5rem, 0, center);
+  }
   .equipment {
     @include grid(1fr, 0, 0, stretch);
     //................//
     //must be repaired//
     //................//
-
+    div:nth-child(odd) {
+    margin-bottom: $margin--bottom--5rem;
+  }
     &--item {
       @include flex(column, center, center, 0);
       width: 100%;
       height: auto;
-      margin-bottom: 4rem;
+      margin-bottom: $margin--bottom--4rem;
       img {
         width: 100%;
         height: auto;

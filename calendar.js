@@ -15,10 +15,14 @@ function renderCalendar(month, year) {
     root.textContent = '';
     let newDate = new Date(year, month, 1);
     let daysOfMonth = [];
-    for (let i = 0; i < new Date(year, month).getDay(); i++) {
+    function appendEmptyField() {
         const emptyField = document.createElement('span');
+        emptyField.className = 'empty--field';
         emptyField.textContent = '';
         root.appendChild(emptyField);
+    }
+    for (let i = 0; i < new Date(year, month).getDay() - 1; i++) {
+        appendEmptyField();
     }
     while (newDate.getMonth() === month) {
         daysOfMonth.push(new Date(newDate));
@@ -26,11 +30,24 @@ function renderCalendar(month, year) {
     }
     daysOfMonth.forEach((day, index) => {
         const dayNumber = document.createElement('span');
+        dayNumber.className = 'calendar--day';
+        if ((day.getDay() === 0) && (index === 0)) {
+            for (let i = 0; i < 6; i++) {
+                appendEmptyField();
+            }
+        }
+        if (day.getDay() === 0) {
+            dayNumber.style.color = 'red';
+            dayNumber.style.gridColumn = '7';
+        }
         dayNumber.textContent = '';
         dayNumber.textContent = `${index + 1} ${daysOfWeek[day.getDay()]}`;
         root.appendChild(dayNumber);
-        console.log(day);
     });
+    for (let i = (new Date(newDate.getFullYear(), newDate.getMonth(), 0).getDate()) + 1; i <= 42; i++) {
+        appendEmptyField();
+        console.log(month, i);
+    }
 }
 renderCalendar(monthCounter, yearCounter);
 function setMonth() {
