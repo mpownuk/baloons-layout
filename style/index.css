@@ -259,12 +259,24 @@ svg {
   margin-bottom: 18rem;
 }
 
+.main .about {
+  display: grid;
+  row-gap: 5rem;
+  column-gap: 0;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
 .main .equipment {
   display: grid;
   row-gap: 0;
   column-gap: 0;
   grid-template-columns: 1fr;
   justify-items: stretch;
+}
+
+.main .equipment div:nth-child(odd) {
+  margin-bottom: 5rem;
 }
 
 .main .equipment--item {
@@ -536,6 +548,9 @@ svg {
 }
 
 @media screen and (min-width: 45em) {
+  .main .about p {
+    margin: 0;
+  }
   .main .max--width {
     max-width: 67rem;
     margin: 1rem 2rem;

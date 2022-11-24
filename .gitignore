@@ -1,23 +1,26 @@
 file.txt
 
-partials/_reset.css
-partials/_reset.min.css
-partials/_tags.css
-partials/_tags.min.css
+style/partials/_reset.css
+style/partials/_reset.min.css
+style/partials/_tags.css
+style/partials/_tags.min.css
 
-components/_main.css
-components/_main.min.css
-components/_nav.css
-components/_nav.min.css
+style/components/_main.css
+style/components/_main.min.css
+
+style/_tags.css
+style/_tags.min.css
+style/components/_nav.css
+style/components/_nav.min.css
 
 
-classes/_parallax.css
-classes/_parallax.min.css
+style/classes/_parallax.css
+style/classes/_parallax.min.css
 
-_media.css
-_media.min.css
+style/_media.css
+style/_media.min.css
 
 tsconfig.json
 
-
-
+style/index.min.css
+calendar.min.css
