@@ -1,1 +1,0 @@
-body{max-width:960px}#root{display:grid;row-gap:.4rem;column-gap:.4rem;grid-template-columns:repeat(7, 1fr);justify-items:stretch;min-width:1rem;grid-template-rows:repeat(6, 1fr)}#year-month{color:purple;font-size:2rem}.calendar--day{border:solid 1px gray;padding:0.5rem;height:3rem;font-size:0.8rem}.empty--field{background-color:#f3f3f3}button{margin:1rem}

@@ -14,22 +14,26 @@ const currentYear: number = new Date().getFullYear()
 let monthCounter: number = currentMonth
 let yearCounter: number = currentYear
 
+function appendEmptyField(){ 
+  const emptyField: HTMLSpanElement = document.createElement('span')
+  emptyField.className = 'empty--field'
+  emptyField.textContent = ''
+  root.appendChild(emptyField)
+}
+
 function renderCalendar(month:number, year:number){
   yearMonth.textContent = ''
   root.textContent = ''
  let newDate = new Date(year, month, 1)
  let daysOfMonth: Date[] = []
 
- function appendEmptyField(){ 
-   const emptyField: HTMLSpanElement = document.createElement('span')
-   emptyField.className = 'empty--field'
-   emptyField.textContent = ''
-  
-  root.appendChild(emptyField)
-}
+// writing function to count empty fields before actual days is waste of time (sundays are stupid) bcs at the end last grid rows fullfilled with gray background will be not displayed
+//  let emptyFieldsBeforeActualDays:number = 0
+
 
  for (let i = 0; i < new Date(year, month).getDay()-1; i++){
   appendEmptyField()
+  // emptyFieldsBeforeActualDays = i
  }
 
  while(newDate.getMonth() === month){
@@ -54,10 +58,27 @@ function renderCalendar(month:number, year:number){
   root.appendChild(dayNumber)
  })
 
- for (let i = (new Date(newDate.getFullYear(), newDate.getMonth(), 0).getDate())+1; i <= 42; i++){
+ for (let i = (new Date(newDate.getFullYear(), newDate.getMonth(), 0).getDate()); i <= 42; i++){
   appendEmptyField()
-  console.log(month, i)
- }
+  console.log(i)
+}
+
+function hideExtraEptyFields(){
+  const hideMe: NodeListOf <HTMLSpanElement> = document.querySelectorAll("span")
+  function loopOnEmptyFilds(empty: number){ 
+    for (let i = empty; i < hideMe.length; i++){
+    hideMe[i].style.display = 'none'
+  }
+  }
+  if (hideMe[28].className === 'empty--field'){
+    loopOnEmptyFilds(28)
+  } else if (hideMe[35].className === 'empty--field'){
+    loopOnEmptyFilds(35)
+  }
+  // console.log(hideMe)
+}
+
+  hideExtraEptyFields()
 }
 renderCalendar(monthCounter, yearCounter)
 
