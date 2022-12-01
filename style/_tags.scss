@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "partials/fonts";
 @import "partials/reset";
 @import "partials/variables";
 @import "mixins/grid";
@@ -106,6 +106,6 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  fill: #ccf3ff;
+  fill: $bg--svg--color;
   z-index: -1;
 }

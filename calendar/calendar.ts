@@ -27,6 +27,25 @@ function renderCalendar(month:number, year:number){
  let newDate = new Date(year, month, 1)
  let daysOfMonth: Date[] = []
 
+ function removeForm(){
+ }
+
+ function generateForm(parent:HTMLSpanElement) {
+   const form = document.createElement('div')
+  form.innerHTML = `<form>
+  <label for="firstName"> First Name</label>
+  <input type="text" id="firstName" placeholder="First Name">
+  <label for="lastName"> Last Name</label>
+  <input type="email" id="email" placeholder="Email">
+  <label for="firstName">Adress</label>
+  <input type="text" id="city" placeholder="City">
+  <input type="text" id="street" placeholder="Street">
+  <input type="number" id="homeNumber" placeholder="22">
+  <textarea placeholder="Additional Information"></textarea>
+</form>`
+parent.appendChild(form)
+ }
+
 // writing function to count empty fields before actual days is waste of time (sundays are stupid) bcs at the end last grid rows fullfilled with gray background will be not displayed
 //  let emptyFieldsBeforeActualDays:number = 0
 
@@ -52,6 +71,13 @@ function renderCalendar(month:number, year:number){
   if(day.getDay() === 0){
     dayNumber.style.color =  'red'
     dayNumber.style.gridColumn = '7'
+  }
+  if(day.getDay()>0 && day.getDay()<6){
+    dayNumber.classList.add("calendar--free--term")
+    dayNumber.addEventListener('click', ()=>{
+      removeForm()
+      generateForm(dayNumber)
+    })
   }
   dayNumber.textContent = ''
   dayNumber.textContent = `${index+1} ${daysOfWeek[day.getDay()]}`

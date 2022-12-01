@@ -24,3 +24,5 @@ tsconfig.json
 
 style/index.min.css
 calendar.min.css
+calendar/form.css
+calendar/form.min.css
