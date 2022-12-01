@@ -1,0 +1,16 @@
+@import "../style/mixins/flex";
+
+
+
+// grid($columns, $row-gap, $column-gap, $justify-items)
+// flex($direction, $justify, $align, $gap) 
+
+form {
+  @include flex(column, center, center, 1rem);
+  position: absolute;
+  top:-0.5rem;
+  left:-0.5rem;
+  z-index: 2;
+  background-color: rgb(172, 255, 47);
+ border-radius: 1rem;
+padding: 3rem;}
