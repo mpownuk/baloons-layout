@@ -233,3 +233,18 @@ button {
   padding: 1rem;
   margin: 1rem;
 }
+
+#formRoot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
