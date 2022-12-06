@@ -1,4 +1,6 @@
-const root = document.querySelector("#root") as HTMLElement
+const calendarRoot = document.querySelector("#calendarRoot") as HTMLElement
+
+const formRoot = document.querySelector('#formRoot') as HTMLElement
 const yearMonth = document.querySelector("#year-month") as HTMLElement
 const backward = document.querySelector("#backward") as HTMLButtonElement
 const forward = document.querySelector("#forward") as HTMLButtonElement
@@ -18,12 +20,12 @@ function appendEmptyField(){
   const emptyField: HTMLSpanElement = document.createElement('span')
   emptyField.className = 'empty--field'
   emptyField.textContent = ''
-  root.appendChild(emptyField)
+  calendarRoot.appendChild(emptyField)
 }
 
 function renderCalendar(month:number, year:number){
   yearMonth.textContent = ''
-  root.textContent = ''
+  calendarRoot.textContent = ''
  let newDate = new Date(year, month, 1)
  let daysOfMonth: Date[] = []
 
@@ -31,19 +33,36 @@ function renderCalendar(month:number, year:number){
  }
 
  function generateForm(parent:HTMLSpanElement) {
-   const form = document.createElement('div')
-  form.innerHTML = `<form>
+
+   const formContainer = document.createElement('div')
+  formContainer.innerHTML = `<form id="bookingForm">
   <label for="firstName"> First Name</label>
   <input type="text" id="firstName" placeholder="First Name">
   <label for="lastName"> Last Name</label>
   <input type="email" id="email" placeholder="Email">
-  <label for="firstName">Adress</label>
+  <label for="adress">Adress</label>
   <input type="text" id="city" placeholder="City">
   <input type="text" id="street" placeholder="Street">
   <input type="number" id="homeNumber" placeholder="22">
   <textarea placeholder="Additional Information"></textarea>
+
+  <button type='submit'>confirm</button>
 </form>`
-parent.appendChild(form)
+parent.appendChild(formContainer)
+formRoot.style.display = 'block'
+const firstName = document.getElementById('firstName')
+firstName?.addEventListener('keypress',(e)=>{
+  console.log(e?.target)
+
+
+})
+// ... obsluzyc reszte pol
+const form = document.getElementById('bookingForm') as HTMLFormElement 
+form.addEventListener('submit',(e)=>{
+  e.preventDefault()
+  console.dir(e.target[0].value)
+  formRoot.style.display = 'none'
+})
  }
 
 // writing function to count empty fields before actual days is waste of time (sundays are stupid) bcs at the end last grid rows fullfilled with gray background will be not displayed
@@ -76,12 +95,12 @@ parent.appendChild(form)
     dayNumber.classList.add("calendar--free--term")
     dayNumber.addEventListener('click', ()=>{
       removeForm()
-      generateForm(dayNumber)
+      generateForm(formRoot)
     })
   }
   dayNumber.textContent = ''
   dayNumber.textContent = `${index+1} ${daysOfWeek[day.getDay()]}`
-  root.appendChild(dayNumber)
+  calendarRoot.appendChild(dayNumber)
  })
 
  for (let i = (new Date(newDate.getFullYear(), newDate.getMonth(), 0).getDate()); i <= 42; i++){
