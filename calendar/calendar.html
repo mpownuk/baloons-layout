@@ -9,15 +9,32 @@
 
 </head>
 <body>
+  <img class="background--img" src="../pics/pexels-oleksandr-pidvalnyi-12955525-min.webp">
   <div class="wrapper">
     <div class="calendar--handler">
       <button id="backward">backward</button>
       <button id="forward">forward</button>
-      <div id="year-month"></div>
+      <div id="year--month"></div>
     </div>
-    <div id="calendarRoot"></div>
+    <div id="calendar--root"></div>
   </div>
-  <div id="formRoot"></div>
+  <div id="form--root">
+    <form action="" id="booking--form">
+      <div id="close--form--btn">Close</div>
+      <label for="first--name">First Name</label>
+      <input type="text" placeholder="Adam" id="first--name">
+      <label for="last--name">Last Name</label>
+      <input type="text" placeholder="Kowalsky" id="last--name">
+      <label for="eMail">Email</label>
+      <input type="text" placeholder="adamkowalsky@example.com" id="eMail">
+      <label for="adress">Adress</label>
+      <input type="text" id="city" placeholder="City">
+      <input type="text" id="street" placeholder="Street">
+      <input type="number" id="homeNumber" placeholder="22">
+      <textarea name="textarea" id="textarea"></textarea>
+      <button type="submit">Confirm</button>  
+    </form> 
+  </div>
 
   <script src="calendar.js"></script>
 </body>
