@@ -1,10 +1,13 @@
 "use strict";
-const calendarRoot = document.querySelector("#calendarRoot");
-const formRoot = document.querySelector('#formRoot');
-const yearMonth = document.querySelector("#year-month");
-const backward = document.querySelector("#backward");
-const forward = document.querySelector("#forward");
+const calendarRoot = document.getElementById("calendar--root");
+const formRoot = document.getElementById('form--root');
+const yearMonth = document.getElementById("year--month");
+const backward = document.getElementById("backward");
+const forward = document.getElementById("forward");
+const closeBtn = document.getElementById('close--form--btn');
 const elem = document.createElement('span');
+const bookingForm = document.getElementById("booking--form");
+closeBtn.addEventListener('click', () => { formRoot.classList.remove('visible'); });
 const monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const daysOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const currentMonth = new Date().getMonth();
@@ -22,37 +25,6 @@ function renderCalendar(month, year) {
     calendarRoot.textContent = '';
     let newDate = new Date(year, month, 1);
     let daysOfMonth = [];
-    function removeForm() {
-    }
-    function generateForm(parent) {
-        const formContainer = document.createElement('div');
-        formContainer.innerHTML = `<form id="bookingForm">
-  <label for="firstName"> First Name</label>
-  <input type="text" id="firstName" placeholder="First Name">
-  <label for="lastName"> Last Name</label>
-  <input type="email" id="email" placeholder="Email">
-  <label for="adress">Adress</label>
-  <input type="text" id="city" placeholder="City">
-  <input type="text" id="street" placeholder="Street">
-  <input type="number" id="homeNumber" placeholder="22">
-  <textarea placeholder="Additional Information"></textarea>
-
-  <button type='submit'>confirm</button>
-</form>`;
-        parent.appendChild(formContainer);
-        formRoot.style.display = 'block';
-        const firstName = document.getElementById('firstName');
-        firstName === null || firstName === void 0 ? void 0 : firstName.addEventListener('keypress', (e) => {
-            console.log(e === null || e === void 0 ? void 0 : e.target);
-        });
-        // ... obsluzyc reszte pol
-        const form = document.getElementById('bookingForm');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            console.dir(e.target[0].value);
-            formRoot.style.display = 'none';
-        });
-    }
     // writing function to count empty fields before actual days is waste of time (sundays are stupid) bcs at the end last grid rows fullfilled with gray background will be not displayed
     //  let emptyFieldsBeforeActualDays:number = 0
     for (let i = 0; i < new Date(year, month).getDay() - 1; i++) {
@@ -78,8 +50,7 @@ function renderCalendar(month, year) {
         if (day.getDay() > 0 && day.getDay() < 6) {
             dayNumber.classList.add("calendar--free--term");
             dayNumber.addEventListener('click', () => {
-                removeForm();
-                generateForm(formRoot);
+                formRoot.classList.add("visible");
             });
         }
         dayNumber.textContent = '';
@@ -103,7 +74,6 @@ function renderCalendar(month, year) {
         else if (hideMe[35].className === 'empty--field') {
             loopOnEmptyFilds(35);
         }
-        // console.log(hideMe)
     }
     hideExtraEptyFields();
 }
@@ -125,4 +95,7 @@ forward.addEventListener('click', (I) => {
     setMonth();
     renderCalendar(monthCounter, yearCounter);
     yearMonth.appendChild(elem);
+});
+bookingForm.addEventListener('click', (e) => {
+    e.preventDefault();
 });
