@@ -19,12 +19,12 @@ overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
+  width: auto;
+  height: 100%;
   min-width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
-  height: auto;
+  min-height: auto;
   z-index: -1;
-  filter: brightness(60%)
+  filter: brightness(0.6)
 }
 
 .wrapper {
@@ -38,30 +38,52 @@ overflow: hidden;
  @include grid(repeat(7, 1fr),0.4rem, 0.4rem, stretch);
 }
 
-#year-month {
-color:purple;
+#year--month {
 font-size: 3rem;
 margin-bottom: 2rem;
 border-radius: 1rem;
+color: $nav-txt-color;
 }
 
 .calendar--handler {
+  @include flex(row,  space-between, center, 0.4rem);
+
   width: 100%;
 }
 
 .calendar--day {
   background-color:  rgba(234, 234, 234, 0.7);
-  font-size: 2rem;
-  padding: 1.5rem;
+  font-size: 3rem;
+  padding: 2.5rem;
+  text-align: center;
+  width: 8rem;
   height: 8rem;
   border-radius: 1rem;
 }
+.calendar--day--names {
+  @include flex(row,  flex-start, center, 0.4rem);
+  margin-bottom: 1rem;
+
+  .calendar--day--name{
+    @extend .calendar--day;
+    font-size: 2rem;
+    height: 5rem;
+    padding: 1.5rem;
+    background-color: rgba(107, 15, 19, 0.6);
+    color: $nav-txt-color;
+  }
+}
+
 
 .calendar--free--term {
   position: relative;
   background-color: $bg--svg--color;
-  opacity: 0.9;
+  opacity: 0.8;
+  transition: all 0.3s;
+}
 
+.calendar--free--term:hover{
+  opacity: 1;
 }
 
 .calendar--reserved{
