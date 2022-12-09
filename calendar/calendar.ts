@@ -5,15 +5,11 @@ const yearMonth = document.getElementById("year--month") as HTMLElement
 const backward = document.getElementById("backward") as HTMLButtonElement
 const forward = document.getElementById("forward") as HTMLButtonElement
 const closeBtn = document.getElementById('close--form--btn') as HTMLElement
-const elem  = document.createElement('span') as HTMLSpanElement
+const chosenMonthYear  = document.createElement('span') as HTMLSpanElement
 const bookingForm = document.getElementById("booking--form") as HTMLFormElement
-
-closeBtn.addEventListener('click', ()=>{formRoot.classList.remove('visible')})
 
 
 const monthsOfYear: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-const daysOfWeek: string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
 const currentMonth: number = new Date().getMonth()
 const currentYear: number = new Date().getFullYear()
@@ -33,14 +29,8 @@ function renderCalendar(month:number, year:number){
   let newDate = new Date(year, month, 1)
   let daysOfMonth: Date[] = []
   
-  
-  // writing function to count empty fields before actual days is waste of time (sundays are stupid) bcs at the end last grid rows fullfilled with gray background will be not displayed
-  //  let emptyFieldsBeforeActualDays:number = 0
-  
-  
   for (let i = 0; i < new Date(year, month).getDay()-1; i++){
     appendEmptyField()
-    // emptyFieldsBeforeActualDays = i
   }
   
   while(newDate.getMonth() === month){
@@ -67,7 +57,7 @@ function renderCalendar(month:number, year:number){
     })
   }
   dayNumber.textContent = ''
-  dayNumber.textContent = `${index+1} ${daysOfWeek[day.getDay()]}`
+  dayNumber.textContent = `${index+1}`
   calendarRoot.appendChild(dayNumber)
 })
 
@@ -82,13 +72,13 @@ function hideExtraEptyFields(){
     for (let i = empty; i < hideMe.length; i++){
     hideMe[i].style.display = 'none'
   }
-}
-if (hideMe[28].className === 'empty--field'){
-  loopOnEmptyFilds(28)
-} else if (hideMe[35].className === 'empty--field'){
-  loopOnEmptyFilds(35)
-}
-}
+    }
+    if (hideMe[28].className === 'empty--field'){
+      loopOnEmptyFilds(28)
+    } else if (hideMe[35].className === 'empty--field'){
+      loopOnEmptyFilds(35)
+    }
+  }
 
 hideExtraEptyFields()
 }
@@ -96,9 +86,9 @@ renderCalendar(monthCounter, yearCounter)
 
 
 function setMonth() {
-  elem.textContent = ""
-  elem.textContent = `${yearCounter.toString()}, ${monthsOfYear[monthCounter]}`
-  yearMonth.appendChild(elem)
+  chosenMonthYear.textContent = ""
+  chosenMonthYear.textContent = `${yearCounter.toString()}, ${monthsOfYear[monthCounter]}`
+  yearMonth.appendChild(chosenMonthYear)
 }
 setMonth()
 
@@ -106,7 +96,7 @@ backward.addEventListener('click', (I)=>{
   monthCounter <= 0 ? (monthCounter = 11) && (yearCounter -=1): monthCounter-= 1
   setMonth()
   renderCalendar(monthCounter, yearCounter)
-  yearMonth.appendChild(elem)
+  yearMonth.appendChild(chosenMonthYear)
   
 })
 
@@ -114,10 +104,11 @@ forward.addEventListener('click', (I)=>{
   monthCounter >= 11 ? (yearCounter +=1) && (monthCounter = 0) : monthCounter += 1
   setMonth()
   renderCalendar(monthCounter, yearCounter)
-  yearMonth.appendChild(elem)
+  yearMonth.appendChild(chosenMonthYear)
 })
 
 
 bookingForm.addEventListener('click', (e)=>{
   e.preventDefault()
 })
+closeBtn.addEventListener('click', ()=>{formRoot.classList.remove('visible')})

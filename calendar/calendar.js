@@ -5,11 +5,9 @@ const yearMonth = document.getElementById("year--month");
 const backward = document.getElementById("backward");
 const forward = document.getElementById("forward");
 const closeBtn = document.getElementById('close--form--btn');
-const elem = document.createElement('span');
+const chosenMonthYear = document.createElement('span');
 const bookingForm = document.getElementById("booking--form");
-closeBtn.addEventListener('click', () => { formRoot.classList.remove('visible'); });
 const monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const daysOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
 let monthCounter = currentMonth;
@@ -25,11 +23,8 @@ function renderCalendar(month, year) {
     calendarRoot.textContent = '';
     let newDate = new Date(year, month, 1);
     let daysOfMonth = [];
-    // writing function to count empty fields before actual days is waste of time (sundays are stupid) bcs at the end last grid rows fullfilled with gray background will be not displayed
-    //  let emptyFieldsBeforeActualDays:number = 0
     for (let i = 0; i < new Date(year, month).getDay() - 1; i++) {
         appendEmptyField();
-        // emptyFieldsBeforeActualDays = i
     }
     while (newDate.getMonth() === month) {
         daysOfMonth.push(new Date(newDate));
@@ -54,7 +49,7 @@ function renderCalendar(month, year) {
             });
         }
         dayNumber.textContent = '';
-        dayNumber.textContent = `${index + 1} ${daysOfWeek[day.getDay()]}`;
+        dayNumber.textContent = `${index + 1}`;
         calendarRoot.appendChild(dayNumber);
     });
     for (let i = (new Date(newDate.getFullYear(), newDate.getMonth(), 0).getDate()); i <= 42; i++) {
@@ -79,23 +74,24 @@ function renderCalendar(month, year) {
 }
 renderCalendar(monthCounter, yearCounter);
 function setMonth() {
-    elem.textContent = "";
-    elem.textContent = `${yearCounter.toString()}, ${monthsOfYear[monthCounter]}`;
-    yearMonth.appendChild(elem);
+    chosenMonthYear.textContent = "";
+    chosenMonthYear.textContent = `${yearCounter.toString()}, ${monthsOfYear[monthCounter]}`;
+    yearMonth.appendChild(chosenMonthYear);
 }
 setMonth();
 backward.addEventListener('click', (I) => {
     monthCounter <= 0 ? (monthCounter = 11) && (yearCounter -= 1) : monthCounter -= 1;
     setMonth();
     renderCalendar(monthCounter, yearCounter);
-    yearMonth.appendChild(elem);
+    yearMonth.appendChild(chosenMonthYear);
 });
 forward.addEventListener('click', (I) => {
     monthCounter >= 11 ? (yearCounter += 1) && (monthCounter = 0) : monthCounter += 1;
     setMonth();
     renderCalendar(monthCounter, yearCounter);
-    yearMonth.appendChild(elem);
+    yearMonth.appendChild(chosenMonthYear);
 });
 bookingForm.addEventListener('click', (e) => {
     e.preventDefault();
 });
+closeBtn.addEventListener('click', () => { formRoot.classList.remove('visible'); });
