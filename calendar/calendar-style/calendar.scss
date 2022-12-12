@@ -1,0 +1,152 @@
+@import "../../style/partials/fonts";
+@import "../../style/tags";
+@import "../../style/mixins/grid";
+@import "../../style/mixins/flex";
+@import "../../style/partials/reset";
+@import "form";
+@import "../../style/classes/parallax";
+@import "../../style/partials/reset";
+
+// grid($columns, $row-gap, $column-gap, $justify-items)
+// flex($direction, $justify, $align, $gap)
+
+body {
+  @include flex(row, center, center, 0);
+  overflow: hidden;
+}
+
+.background--img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  min-height: auto;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+.wrapper {
+  @include flex(column, flex-start, center, 0);
+  margin-top: 5rem;
+  max-width: 96rem;
+  font-size: 1.6rem;
+
+  #calendar--root {
+    @include grid(repeat(7, 1fr), 0.4rem, 0.4rem, stretch);
+  }
+
+  .calendar--handler {
+    @include flex(row, space-between, center, 0.4rem);
+    width: 100%;
+    margin-bottom: 2rem;
+
+
+    #year--month {
+      @include flex(row, center, center, 0);
+      display: block;
+      font-size: 3rem;
+      font-weight: 500;
+      border-radius: 1rem;
+      color: $nav-txt-color;
+    }
+  }
+  
+.calendar--buttons--wrapper {
+  @include flex(row, space-between, center, 0.4rem); 
+}
+
+  .calendar--btn {
+    @extend .btn;
+  }  
+  .calendar--btn:hover {
+    @extend .btn--hover
+  }
+
+  .calendar--day {
+    background-color: rgba(234, 234, 234, 0.65);
+    font-size: 3rem;
+    padding: 2.5rem;
+    text-align: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+  }
+  .calendar--day--names {
+    @include flex(row, flex-start, center, 0.4rem);
+    margin-bottom: 1rem;
+
+    .calendar--day--name {
+      @extend .calendar--day;
+      font-size: 2rem;
+      height: 5rem;
+      padding: 1.5rem;
+      background-color: rgba(107, 15, 19, 0.6);
+      color: $nav-txt-color;
+    }
+  }
+
+  .calendar--root--wrapper {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+    padding-bottom: 100%;
+
+    #calendar--root {
+      @include grid(repeat(7, 1fr), 0.4rem, 0.4rem, stretch);
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+
+    #calendar--root1 {
+      @extend #calendar--root;
+    }
+  }
+
+  .calendar--free--term {
+    position: relative;
+    background-color: rgba(204, 243, 255, 0.85);
+    transition: all 0.2s;
+  }
+
+  .calendar--free--term:hover {
+    background-color: rgba(247, 247, 247, 0.95);
+  }
+
+  .calendar--reserved {
+    background-color: rgb(255, 211, 202);
+    border: none;
+  }
+
+  .empty--field {
+    background-color: rgba(234, 234, 234, 0.4);
+    border-radius: 1rem;
+  }
+
+  button {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+#form--root {
+  @include flex(column, center, center, 0);
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px) brightness(60%);
+  transition: 0.3s;
+}
+.visible {
+  display: flex !important;
+}
+#close--form--btn {
+  background-color: red;
+}

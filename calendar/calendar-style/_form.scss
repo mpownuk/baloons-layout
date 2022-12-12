@@ -1,4 +1,4 @@
-@import "../style/mixins/flex";
+@import "../../style/mixins/flex";
 
 
 
@@ -8,9 +8,6 @@
 form {
   @include flex(column, center, center, 1rem);
   position: absolute;
-  // transform: translate(50%, 50%);
-  // top: -50%;
-  // left:-50%;
   z-index: 2;
   background-color: rgb(172, 255, 47);
   border-radius: 1rem;
