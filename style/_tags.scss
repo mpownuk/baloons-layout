@@ -53,7 +53,8 @@ a:active {
   border: solid 1px #f7f7f7;
   overflow: hidden;
 }
-.button:link, .button:visited {
+
+.btn {
   text-decoration: none;
   color: $nav-txt-color;
   border: none;
@@ -70,7 +71,12 @@ a:active {
   transition: 0.2s;
   cursor: pointer;
 }
-.button:hover, .button:active {
+
+.button:link, .button:visited {
+ @extend .btn
+}
+
+.btn--hover {
   background-color: $nav-txt-color;
   color: $nav-btn-txt;
   border-radius: 100px;
@@ -79,6 +85,10 @@ a:active {
   margin: 0;
   cursor: pointer;
   border: none;
+}
+
+.button:hover, .button:active {
+@extend .btn--hover
 }
 
 ul {

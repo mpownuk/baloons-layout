@@ -83,7 +83,7 @@ a:active {
   overflow: hidden;
 }
 
-.button:link, .button:visited {
+.btn, .button:link, .button:visited, .wrapper .calendar--btn {
   text-decoration: none;
   color: #f7f7f7;
   border: none;
@@ -101,7 +101,7 @@ a:active {
   cursor: pointer;
 }
 
-.button:hover, .button:active {
+.btn--hover, .button:hover, .button:active, .wrapper .calendar--btn:hover {
   background-color: #f7f7f7;
   color: #4f6eb0;
   border-radius: 100px;
@@ -216,7 +216,7 @@ body {
   min-width: 100%;
   min-height: auto;
   z-index: -1;
-  filter: brightness(0.6);
+  filter: brightness(0.5);
 }
 
 .wrapper {
@@ -230,7 +230,7 @@ body {
   font-size: 1.6rem;
 }
 
-#calendar--root {
+.wrapper #calendar--root, .wrapper .calendar--root--wrapper #calendar--root1 {
   display: grid;
   row-gap: 0.4rem;
   column-gap: 0.4rem;
@@ -238,24 +238,39 @@ body {
   justify-items: stretch;
 }
 
-#year--month {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  border-radius: 1rem;
-  color: #f7f7f7;
-}
-
-.calendar--handler {
+.wrapper .calendar--handler {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0.4rem;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
-.calendar--day, .calendar--day--names .calendar--day--name {
-  background-color: rgba(234, 234, 234, 0.7);
+.wrapper .calendar--handler #year--month {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  display: block;
+  font-size: 3rem;
+  font-weight: 500;
+  border-radius: 1rem;
+  color: #f7f7f7;
+}
+
+.wrapper .calendar--buttons--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wrapper .calendar--day, .wrapper .calendar--day--names .calendar--day--name {
+  background-color: rgba(234, 234, 234, 0.65);
   font-size: 3rem;
   padding: 2.5rem;
   text-align: center;
@@ -264,7 +279,7 @@ body {
   border-radius: 1rem;
 }
 
-.calendar--day--names {
+.wrapper .calendar--day--names {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -273,7 +288,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.calendar--day--names .calendar--day--name {
+.wrapper .calendar--day--names .calendar--day--name {
   font-size: 2rem;
   height: 5rem;
   padding: 1.5rem;
@@ -281,28 +296,45 @@ body {
   color: #f7f7f7;
 }
 
-.calendar--free--term {
+.wrapper .calendar--root--wrapper {
+  overflow: hidden;
   position: relative;
-  background-color: #ccf3ff;
-  opacity: 0.8;
-  transition: all 0.3s;
+  width: 100%;
+  padding-bottom: 100%;
 }
 
-.calendar--free--term:hover {
-  opacity: 1;
+.wrapper .calendar--root--wrapper #calendar--root, .wrapper .calendar--root--wrapper #calendar--root1 {
+  display: grid;
+  row-gap: 0.4rem;
+  column-gap: 0.4rem;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: stretch;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.calendar--reserved {
+.wrapper .calendar--free--term {
+  position: relative;
+  background-color: rgba(204, 243, 255, 0.85);
+  transition: all 0.2s;
+}
+
+.wrapper .calendar--free--term:hover {
+  background-color: rgba(247, 247, 247, 0.95);
+}
+
+.wrapper .calendar--reserved {
   background-color: #ffd3ca;
   border: none;
 }
 
-.empty--field {
+.wrapper .empty--field {
   background-color: rgba(234, 234, 234, 0.4);
   border-radius: 1rem;
 }
 
-button {
+.wrapper button {
   padding: 1rem;
   margin: 1rem;
 }
@@ -321,7 +353,7 @@ button {
   left: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px) brightness(60%);
   transition: 0.3s;
 }
 
