@@ -40,7 +40,22 @@
     </div>
     <div id="form--root">
       <form action="" id="booking--form">
-        <div id="close--form--btn">Close</div>
+        <div id="close--form--btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="close--nav"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
         <label for="first--name">First Name</label>
         <input type="text" placeholder="Adam" id="first--name" />
         <label for="last--name">Last Name</label>
@@ -48,8 +63,8 @@
         <label for="eMail">Email</label>
         <input type="text" placeholder="adamkowalsky@example.com" id="eMail" />
         <label for="adress">Adress</label>
-        <input type="text" id="city" placeholder="City" />
-        <input type="text" id="street" placeholder="Street" />
+        <input type="text" id="city" placeholder="San Francisco" />
+        <input type="text" id="street" placeholder="Yellow st." />
         <input type="number" id="homeNumber" placeholder="22" />
         <textarea name="textarea" id="textarea"></textarea>
         <button type="submit">Confirm</button>

@@ -85,7 +85,6 @@ function renderCalendar(month: number, year: number, root:HTMLElement) {
     i++
   ) {
     appendEmptyField(root);
-    console.log(i);
   }
 
   function hideExtraEptyFields() {
@@ -126,18 +125,18 @@ function manipulateRootsPosition(emptyRoot:HTMLElement, fullfilledRoot:HTMLEleme
     renderCalendar(monthCounter, yearCounter, emptyRoot);
     yearMonth.appendChild(chosenMonthYear);
     emptyRoot.style.left = "0"
-    emptyRoot.style.transition = '0.3s'
+    emptyRoot.style.transition = '0.2s'
 
     fullfilledRoot.style.left = fRpos1
-    fullfilledRoot.style.transition = '0.3s'
+    fullfilledRoot.style.transition = '0.2s'
     setTimeout(() => {
       fullfilledRoot.textContent = ""
       fullfilledRoot.style.left = fRpos2  
-    }, 300);
+    }, 100);
     setTimeout(() => {
       backward.disabled = false
       forward.disabled = false  
-    }, 400);
+    }, 300);
   }
 }
 
@@ -161,6 +160,8 @@ backward.addEventListener("click", (I) => {
  
   manipulateRootsPosition(calendarRoot1,calendarRoot,'200%', '-100%')
   manipulateRootsPosition(calendarRoot,calendarRoot1,'200%', '-100%')
+  const d = Date.parse( new Date().toString())
+  console.log(d)
 });
 
 forward.addEventListener("click", (I) => {
@@ -173,6 +174,8 @@ forward.addEventListener("click", (I) => {
 
   manipulateRootsPosition(calendarRoot1,calendarRoot,'-100%','200%')
   manipulateRootsPosition(calendarRoot,calendarRoot1,'-100%','200%')
+  const d = Date.parse( new Date().toString())
+  console.log(d)
 });
 
 bookingForm.addEventListener("click", (e) => {
