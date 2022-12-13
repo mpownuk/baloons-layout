@@ -71,7 +71,6 @@ function renderCalendar(month, year, root) {
     });
     for (let i = new Date(newDate.getFullYear(), newDate.getMonth(), 0).getDate(); i <= 42; i++) {
         appendEmptyField(root);
-        console.log(i);
     }
     function hideExtraEptyFields() {
         const hideMe = document.querySelectorAll("span");
@@ -106,17 +105,17 @@ function manipulateRootsPosition(emptyRoot, fullfilledRoot, fRpos1, fRpos2) {
         renderCalendar(monthCounter, yearCounter, emptyRoot);
         yearMonth.appendChild(chosenMonthYear);
         emptyRoot.style.left = "0";
-        emptyRoot.style.transition = '0.3s';
+        emptyRoot.style.transition = '0.2s';
         fullfilledRoot.style.left = fRpos1;
-        fullfilledRoot.style.transition = '0.3s';
+        fullfilledRoot.style.transition = '0.2s';
         setTimeout(() => {
             fullfilledRoot.textContent = "";
             fullfilledRoot.style.left = fRpos2;
-        }, 300);
+        }, 100);
         setTimeout(() => {
             backward.disabled = false;
             forward.disabled = false;
-        }, 400);
+        }, 300);
     }
 }
 backward.addEventListener('mouseenter', () => {
@@ -136,6 +135,8 @@ backward.addEventListener("click", (I) => {
     forward.disabled = true;
     manipulateRootsPosition(calendarRoot1, calendarRoot, '200%', '-100%');
     manipulateRootsPosition(calendarRoot, calendarRoot1, '200%', '-100%');
+    const d = Date.parse(new Date().toString());
+    console.log(d);
 });
 forward.addEventListener("click", (I) => {
     monthCounter >= 11
@@ -146,6 +147,8 @@ forward.addEventListener("click", (I) => {
     forward.disabled = true;
     manipulateRootsPosition(calendarRoot1, calendarRoot, '-100%', '200%');
     manipulateRootsPosition(calendarRoot, calendarRoot1, '-100%', '200%');
+    const d = Date.parse(new Date().toString());
+    console.log(d);
 });
 bookingForm.addEventListener("click", (e) => {
     e.preventDefault();

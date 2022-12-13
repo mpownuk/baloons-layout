@@ -1,12 +1,52 @@
-form {
+#form--root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px) brightness(60%);
+  transition: 0.3s;
+}
+
+#form--root #booking--form {
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   position: absolute;
   z-index: 2;
-  background-color: #acff2f;
+  background-color: #a3c2cc;
   border-radius: 1rem;
   padding: 3rem;
+  position: relative;
+}
+
+#form--root #booking--form input {
+  padding: 0.5rem;
+  border: none;
+}
+
+#form--root #booking--form .two--cols {
+  grid-column: 1/-1;
+}
+
+#form--root #booking--form #close--form--btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: transparent;
+}
+
+#form--root #booking--form button[type="submit"] {
+  display: block;
+  justify-self: stretch;
 }
