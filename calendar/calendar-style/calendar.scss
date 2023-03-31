@@ -5,7 +5,6 @@
 @import "../../style/partials/reset";
 @import "form";
 @import "../../style/classes/parallax";
-@import "../../style/partials/reset";
 
 // grid($columns, $row-gap, $column-gap, $justify-items)
 // flex($direction, $justify, $align, $gap)
@@ -126,13 +125,21 @@ body {
     background-color: rgba(234, 234, 234, 0.4);
     border-radius: 1rem;
   }
-
-  button {
-    padding: 1rem;
-    margin: 1rem;
-  }
 }
 
+.button {
+  padding: 1rem;
+  margin: 1rem;
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+  .button__arrow {
+    font-size: 2rem;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
 .visible {
   display: flex !important;
 }

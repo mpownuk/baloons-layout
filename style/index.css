@@ -82,7 +82,7 @@ a:active {
   overflow: hidden;
 }
 
-.button:link, .button:visited {
+.btn, .button:link, .button:visited {
   text-decoration: none;
   color: #f7f7f7;
   border: none;
@@ -100,7 +100,7 @@ a:active {
   cursor: pointer;
 }
 
-.button:hover, .button:active {
+.btn--hover, .button:hover, .button:active {
   background-color: #f7f7f7;
   color: #4f6eb0;
   border-radius: 100px;

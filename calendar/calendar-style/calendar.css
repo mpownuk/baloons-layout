@@ -232,12 +232,6 @@ svg {
   filter: brightness(0.5);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   display: flex;
   flex-direction: row;
@@ -377,9 +371,19 @@ body {
   border-radius: 1rem;
 }
 
-.wrapper button {
+.button {
   padding: 1rem;
   margin: 1rem;
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+}
+
+.button .button__arrow {
+  font-size: 2rem;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .visible {
