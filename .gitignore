@@ -26,3 +26,5 @@ style/index.min.css
 calendar.min.css
 calendar/calendar-style/form.css
 calendar/calendar-style/form.min.css
+calendar/calendar-style/calendar-media.css
+calendar/calendar-style/calendar-media.min.css
